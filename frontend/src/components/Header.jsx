@@ -80,11 +80,13 @@ const Header = () => {
         </div>
 
         <div className='flex items-center gap-7'>
+        {user?._id && (
         <div>
           <Link to={"/order"} className='whitespace-nowrap hidden md:flex bg-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 dark:bg-gray-700 px-2 py-1 text-gray-700 dark:text-gray-100 rounded-md' onClick={() => setMenuDisplay(prev => !prev)}>
           <BiSolidShoppingBags className='mt-1 me-1' /> Orders 
           </Link>
         </div>
+        )}
 
         <div>
           <Link to={"/contact"} className='whitespace-nowrap hidden md:block bg-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 dark:bg-gray-700 px-2 py-1 text-gray-700 dark:text-gray-100 rounded-md' onClick={() => setMenuDisplay(prev => !prev)}>
@@ -136,10 +138,10 @@ const Header = () => {
               </Link>
             )}
           </div>
-          {/* Adding Theme Switcher */}
         </div>
       </div>
-<ThemeSwitcher />
+          {/* Adding Theme Switcher */}
+         <ThemeSwitcher />
     </header>
   );
 };
